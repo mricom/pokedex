@@ -3,18 +3,23 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
+    "dev": "parallelshell 'npm run compile:css:watch' 'vite'",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "compile:css:watch": "node-sass -o src/css/ sass --watch"
   },
   "dependencies": {
+    "bootstrap": "^5.2.1",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "reactstrap": "^9.1.4"
   },
   "devDependencies": {
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "@vitejs/plugin-react": "^1.3.0",
+    "node-sass": "^7.0.3",
+    "parallelshell": "^3.0.1",
     "vite": "^2.9.15"
   }
 }
