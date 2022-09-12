@@ -1,2 +1,2 @@
 export const HOST = "https://pokeapi.co/api/v2/";
-export const limit = 30;
+export const limit = 40;
