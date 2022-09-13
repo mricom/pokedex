@@ -1,0 +1,84 @@
+@import "variables";
+
+.badge {
+  width: 48%;
+  line-height: 1rem;
+  text-transform: uppercase;
+  &:not(:first-child) {
+    margin-left: 2%;
+  }
+  &:first-child {
+    margin-left: -2px;
+  }
+  &.grass {
+    background-color: $grass !important;
+  }
+  &.poison {
+    background-color: $poison !important;
+  }
+  &.fire {
+    background-color: $fire !important;
+  }
+  &.flying {
+    background: -webkit-linear-gradient(
+      180deg,
+      $flying-top 50%,
+      $flying-bottom 50%
+    );
+    background: -ms-linear-gradient(
+      180deg,
+      $flying-top 50%,
+      $flying-bottom 50%
+    );
+    background: -moz-linear-gradient(
+      180deg,
+      $flying-top 50%,
+      $flying-bottom 50%
+    );
+    background: -o-linear-gradient(180deg, $flying-top 50%, $flying-bottom 50%);
+    background: linear-gradient(180deg, $flying-top 50%, $flying-bottom 50%);
+    background-color: $flying-top;
+  }
+  &.water {
+    background-color: $water !important;
+  }
+  &.bug {
+    background-color: $bug !important;
+  }
+  &.normal {
+    background-color: $normal !important;
+  }
+  &.electric {
+    background-color: $electric !important;
+  }
+  &.ground {
+    background-color: $grass !important;
+  }
+  &.fairy {
+    background-color: $fairy !important;
+  }
+  &.dark {
+    background-color: $dark !important;
+  }
+  &.psychic {
+    background-color: $psychic !important;
+  }
+  &.dragon {
+    background-color: $grass !important;
+  }
+  &.steel {
+    background-color: $steel !important;
+  }
+  &.ghost {
+    background-color: $ghost !important;
+  }
+  &.rock {
+    background-color: $rock !important;
+  }
+  &.fighting {
+    background-color: $fighting !important;
+  }
+  &.ice {
+    background-color: $ice !important;
+  }
+}
