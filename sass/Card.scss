@@ -11,7 +11,7 @@
     padding-left: 1rem;
     padding-right: 1rem;
     padding-top: 0.2rem;
-    background-color: #fffff7;
+    background-color: $bg-white;
     .pokemon-number {
       color: grey;
       font-weight: 700;
@@ -23,6 +23,12 @@
       text-transform: capitalize;
       margin-bottom: 4px;
       font-size: 1.5rem;
+    }
+    .pokemon-types .badge {
+      width: 48%;
+      &:not(:first-child) {
+        margin-left: 2%;
+      }
     }
   }
 }

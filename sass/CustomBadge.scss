@@ -1,12 +1,8 @@
 @import "variables";
 
 .badge {
-  width: 48%;
   line-height: 1rem;
   text-transform: uppercase;
-  &:not(:first-child) {
-    margin-left: 2%;
-  }
   &:first-child {
     margin-left: -2px;
   }

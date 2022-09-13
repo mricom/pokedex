@@ -8,7 +8,7 @@
     padding-left: 1rem;
     padding-right: 1rem;
     padding-top: 0.2rem;
-    background-color: #fffff7; }
+    background-color: #FFFFF7; }
     .custom-card .custom-card-body .pokemon-number {
       color: grey;
       font-weight: 700;
@@ -19,6 +19,10 @@
       text-transform: capitalize;
       margin-bottom: 4px;
       font-size: 1.5rem; }
+    .custom-card .custom-card-body .pokemon-types .badge {
+      width: 48%; }
+      .custom-card .custom-card-body .pokemon-types .badge:not(:first-child) {
+        margin-left: 2%; }
 
 @media (min-width: 768px) {
   .custom-card {
