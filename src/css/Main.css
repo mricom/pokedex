@@ -1,0 +1,12 @@
+.main-container {
+  background-color: rgba(255, 255, 247, 0.95);
+  border-radius: 10px;
+  margin-left: 2%;
+  margin-right: 2%;
+  width: 96%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 50px 15px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px; }
+
+@media (min-width: 768px) {
+  .main-container {
+    margin-left: auto;
+    margin-right: auto; } }
