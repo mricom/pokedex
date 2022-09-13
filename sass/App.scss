@@ -1,0 +1,16 @@
+@font-face {
+  font-family: "Flexo Demi";
+  src: url("src/css/fonts/Flexo-Demi.ttf");
+}
+
+@font-face {
+  font-family: "Flexo Bold";
+  src: url("src/css/fonts/Flexo-Bold.ttf");
+}
+
+body {
+  background: linear-gradient(rgba(#ffcc01, 0.19), rgba(#ffcc01, 0.19)),
+    linear-gradient(rgba(#fffff2, 0.6), rgba(#fffff2, 0.6)),
+    url("../img/background-sm.jpg");
+  font-family: "Flexo Demi";
+}
