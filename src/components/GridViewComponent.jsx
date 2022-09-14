@@ -7,7 +7,7 @@ export default function GridView(props) {
   return (
     <Row className="grid-view">
       {props.pokemons.map((pokemon) => (
-        <Col xs="6" md="4" lg="3">
+        <Col xs="6" md="4" lg="3" key={pokemon.id}>
           <Card pokemon={pokemon}></Card>
         </Col>
       ))}

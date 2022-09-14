@@ -1,8 +1,13 @@
 @import "variables";
 
 .list-view {
+  padding-top: 20px;
+  padding-bottom: 10px;
   .list-group-item {
     background-color: inherit;
+    .questionmark{
+      max-height: 87.5px;
+    }
     .pokemon-number {
       font-family: "Flexo Bold";
       font-size: 0.7rem;

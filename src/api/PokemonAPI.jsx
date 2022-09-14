@@ -1,7 +1,7 @@
-import { HOST, limit } from "../shared/utils";
+import { HOST, limitPerPage } from "../shared/utils";
 
 export const getPokemonsList = (offset) => {
-  return fetch(`${HOST}pokemon/?limit=${limit}&offset=${offset}`).then(
+  return fetch(`${HOST}pokemon/?limit=${limitPerPage}&offset=${offset}`).then(
     (response) => {
       if (response.status !== 200) {
         throw new Error("Invalid Status from server: " + response.statusText);

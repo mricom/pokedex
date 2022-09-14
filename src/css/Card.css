@@ -3,7 +3,12 @@
   .custom-card .custom-card-header {
     background-color: #f2f2f2;
     border-radius: 10px;
-    padding: 1rem; }
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .custom-card .custom-card-header .questionmark {
+      max-height: 258px; }
   .custom-card .custom-card-body {
     padding-left: 1rem;
     padding-right: 1rem;
