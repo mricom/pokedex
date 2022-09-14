@@ -16,16 +16,18 @@
       color: grey;
       font-weight: 700;
       margin-bottom: 0.5em;
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       font-family: "Flexo Bold";
     }
     .pokemon-name {
       text-transform: capitalize;
       margin-bottom: 4px;
-      font-size: 1.5rem;
+      font-size: 1.2rem;
     }
     .pokemon-types .badge {
       width: 48%;
+      line-height: 0.75rem;
+      font-size: 0.75rem;
       &:not(:first-child) {
         margin-left: 2%;
       }
@@ -33,12 +35,35 @@
   }
 }
 
-@media (min-width: 768px) {
+
+@media(min-width: 576px){
   .custom-card {
     margin: 20px 15px;
     .custom-card-body {
       padding-left: 1.5rem;
       padding-right: 1.5rem;
+      .pokemon-number {
+        font-size: 1rem;
+      }
+      .pokemon-name{
+        font-size: 1.5rem;
+      }
+      .pokemon-types .badge {
+        font-size: 0.8rem;
+      }
+
     }
   }
 }
+
+@media(min-width: 768px){
+  .custom-card {
+    .custom-card-body {
+      .pokemon-types .badge {
+        font-size: 0.9rem;
+      }
+
+    }
+  }
+}
+
