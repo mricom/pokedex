@@ -1,6 +1,7 @@
 import React from "react";
 import { ListGroup, ListGroupItem, Row, Col } from "reactstrap";
 import CustomBadge from "./CustomBadgeComponent";
+import PokemonImage from "./PokemonImageComponent";
 import "../css/ListView.css";
 
 export default function ListView(props) {
@@ -9,12 +10,8 @@ export default function ListView(props) {
       {props.pokemons.map((pokemon) => (
         <ListGroupItem>
           <Row className="align-items-center">
-            <Col xs="1" className="pokemon-image">
-              <img
-                src={pokemon.image}
-                alt={pokemon.name + " image"}
-                className="img-fluid"
-              />
+            <Col xs="1" className="pokemon-image text-center">
+              <PokemonImage image={pokemon.image} name={pokemon.name}/>
             </Col>
             <Col xs="2" className="text-center">
               <div className="pokemon-number">Nº {pokemon.id}</div>
