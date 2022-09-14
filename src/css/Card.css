@@ -7,13 +7,13 @@
     display: flex;
     justify-content: center;
     align-items: center; }
+    .custom-card .custom-card-header .questionmark {
+      max-height: 258px; }
   .custom-card .custom-card-body {
     padding-left: 1rem;
     padding-right: 1rem;
     padding-top: 0.2rem;
     background-color: #FFFFF7; }
-    .custom-card .custom-card-body .questionmark {
-      max-height: 258px; }
     .custom-card .custom-card-body .pokemon-number {
       color: grey;
       font-weight: 700;
