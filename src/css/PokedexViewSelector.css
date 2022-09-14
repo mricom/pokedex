@@ -1,0 +1,16 @@
+.pokedex-view-selector span {
+  font-size: 0.9rem;
+  color: #5c5c5c;
+  padding: 7px 15%;
+  border-radius: 5px; }
+  .pokedex-view-selector span.active {
+    background-color: rgba(255, 204, 1, 0.2); }
+
+@media (min-width: 576px) {
+  .pokedex-view-selector span {
+    font-size: 1rem; } }
+
+@media (min-width: 768px) {
+  .pokedex-view-selector span {
+    font-size: 1.3rem;
+    padding: 7px 12%; } }

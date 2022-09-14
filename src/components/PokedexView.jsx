@@ -4,6 +4,7 @@ import * as api from "../api/PokemonAPI";
 import GridView from "./GridViewComponent";
 import ListView from "./ListViewComponent";
 import LoadingSpinner from "./LoadingSpinnerComponent";
+import PokedexViewSelector from "./PokedexViewSelectorComponent";
 
 export default function PokedexView() {
   const [pokemonList, setPokemonList] = useState({
@@ -56,6 +57,7 @@ export default function PokedexView() {
     <div>
       {pokemonList.dataLoaded ? (
         <>
+          <PokedexViewSelector view={view} setView={setView} />
           {view === "grid" ? (
             <GridView pokemons={pokemonList.data} />
           ) : (

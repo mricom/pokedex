@@ -1,0 +1,31 @@
+@import "variables";
+
+.pokedex-view-selector{
+  span{
+    font-size: 0.9rem;
+    color: rgb(92, 92, 92);
+    padding: 7px 15%;
+    border-radius: 5px;
+    &.active{
+      background-color: rgba($pokemon-yellow, 0.2);
+    }
+  }
+}
+
+@media(min-width: 576px){
+  .pokedex-view-selector{
+    span{
+      font-size: 1rem;
+    }
+  }
+}
+
+@media(min-width: 768px){
+  .pokedex-view-selector{
+    span{
+      font-size: 1.3rem;
+    padding: 7px 12%;
+
+    }
+  }
+}
