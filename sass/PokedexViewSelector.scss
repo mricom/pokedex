@@ -3,7 +3,7 @@
 .pokedex-view-selector {
   span {
     font-size: 0.9rem;
-    color: rgb(92, 92, 92);
+    color: $letter-grey;
     padding: 7px 15%;
     border-radius: 5px;
     &.active {

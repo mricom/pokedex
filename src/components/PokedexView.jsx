@@ -13,7 +13,7 @@ export default function PokedexView() {
     dataLoaded: false,
     data: [],
   });
-  const [view, setView] = useState("list");
+  const [view, setView] = useState("grid");
   const [page, setPage] = useState(1);
   const [pagesCount, setPagesCount] = useState(0);
 

@@ -1,0 +1,21 @@
+@import "variables";
+
+.custom-pagination {
+  .MuiPaginationItem-outlined {
+    border: 1px solid rgba($pokemon-yellow, 0.8);
+  }
+
+  .MuiPaginationItem-page:hover {
+    background-color: rgba(rgba($pokemon-yellow, 0.8), 0.1);
+  }
+
+  .MuiPaginationItem-page.Mui-selected {
+    background-color: rgba(rgba($pokemon-yellow, 0.8), 0.35);
+    &:hover {
+      background-color: rgba(rgba($pokemon-yellow, 0.8), 0.5);
+    }
+  }
+  .MuiPaginationItem-root {
+    color: $letter-grey;
+  }
+}
