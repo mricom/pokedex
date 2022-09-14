@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import * as api from "../api/PokemonAPI";
 import GridView from "./GridViewComponent";
+import ListView from "./ListViewComponent";
 
-export default function ListView() {
+export default function PokedexView() {
   const [pokemonList, setPokemonList] = useState({
     dataLoaded: false,
     data: [],
@@ -21,7 +22,8 @@ export default function ListView() {
               id: pokemon.id,
               detailUrl: pokemon.species.url,
               types: pokemon.types.map((item) => item.type.name),
-              image: pokemon.sprites.other.home.front_default,
+              image: pokemon.sprites.other["official-artwork"].front_default,
+              //image: pokemon.sprites.other.home.front_default,
             }));
           })
           .then((list) => {
@@ -56,9 +58,7 @@ export default function ListView() {
             <GridView pokemons={pokemonList.data}/>
             : 
             <>
-            {pokemonList.data.map(pokemon => (
-              <p>{pokemon.name}</p>
-            ))}
+            <ListView pokemons={pokemonList.data}/>
             </>
           }
         </>

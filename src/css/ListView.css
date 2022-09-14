@@ -1,0 +1,63 @@
+.list-view .list-group-item {
+  background-color: inherit; }
+  .list-view .list-group-item .pokemon-number {
+    font-family: "Flexo Bold";
+    font-size: 0.8rem;
+    color: grey; }
+  .list-view .list-group-item .pokemon-name {
+    display: inline-block;
+    margin-right: 10px;
+    text-transform: capitalize;
+    font-size: 1.2rem;
+    margin-bottom: 0; }
+  .list-view .list-group-item .pokemon-types {
+    display: inline-block; }
+    .list-view .list-group-item .pokemon-types .badge {
+      line-height: 0.5rem; }
+    .list-view .list-group-item .pokemon-types .badge:not(:first-child) {
+      margin-left: 7px; }
+
+@media (min-width: 576px) {
+  .list-view {
+    padding-left: 5%;
+    padding-right: 5%; }
+    .list-view .list-group-item .pokemon-number {
+      font-size: 0.9rem; }
+    .list-view .list-group-item .pokemon-name {
+      margin-right: 5%;
+      font-size: 1.4rem; }
+    .list-view .list-group-item .pokemon-types {
+      display: inline-block; }
+      .list-view .list-group-item .pokemon-types .badge {
+        line-height: 0.8rem;
+        font-size: 0.8rem; } }
+
+@media (min-width: 768px) {
+  .list-view {
+    padding-left: 10%;
+    padding-right: 10%; }
+    .list-view .list-group-item .pokemon-number {
+      font-size: 1rem; }
+    .list-view .list-group-item .pokemon-name {
+      margin-right: 5%;
+      font-size: 1.5rem; }
+    .list-view .list-group-item .pokemon-types {
+      display: inline-block; }
+      .list-view .list-group-item .pokemon-types .badge {
+        line-height: 1rem;
+        font-size: 1rem; } }
+
+@media (min-width: 768px) {
+  .list-view {
+    padding-left: 15%;
+    padding-right: 15%; }
+    .list-view .list-group-item .pokemon-number {
+      font-size: 1rem; }
+    .list-view .list-group-item .pokemon-name {
+      margin-right: 5%;
+      font-size: 1.5rem; }
+    .list-view .list-group-item .pokemon-types {
+      display: inline-block; }
+      .list-view .list-group-item .pokemon-types .badge {
+        line-height: 1rem;
+        font-size: 1rem; } }
