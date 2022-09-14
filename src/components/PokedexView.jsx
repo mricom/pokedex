@@ -8,18 +8,22 @@ import PokedexViewSelector from "./PokedexViewSelectorComponent";
 import { limitPerPage } from "../shared/utils";
 import CustomPagination from "./CustomPaginationComponent";
 
+const pokemonListInitialState = {
+  dataLoaded: false,
+  data: [],
+};
+
 export default function PokedexView() {
-  const [pokemonList, setPokemonList] = useState({
-    dataLoaded: false,
-    data: [],
-  });
+  const [pokemonList, setPokemonList] = useState(pokemonListInitialState);
   const [view, setView] = useState("grid");
   const [page, setPage] = useState(1);
   const [pagesCount, setPagesCount] = useState(0);
 
   useEffect(() => {
+    console.log("hola");
+    setPokemonList(pokemonListInitialState);
     api
-      .getPokemonsList((page-1)*limitPerPage)
+      .getPokemonsList((page - 1) * limitPerPage)
       .then((data) => {
         setPagesCount(Math.ceil(data.count / limitPerPage));
         api
@@ -59,15 +63,26 @@ export default function PokedexView() {
 
   return (
     <div>
+      <PokedexViewSelector view={view} setView={setView} />
       {pokemonList.dataLoaded ? (
         <>
-          <PokedexViewSelector view={view} setView={setView} />
+          <CustomPagination
+            page={page}
+            setPage={setPage}
+            pagesCount={pagesCount}
+            className="mt-5"
+          />
           {view === "grid" ? (
             <GridView pokemons={pokemonList.data} />
           ) : (
             <ListView pokemons={pokemonList.data} />
           )}
-          <CustomPagination page={page} setPage={setPage} pagesCount={pagesCount}/>
+          <CustomPagination
+            page={page}
+            setPage={setPage}
+            pagesCount={pagesCount}
+            className="mt-2 mb-4"
+          />
         </>
       ) : (
         <Row className="align-items-center py-4">
