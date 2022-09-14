@@ -1,6 +1,6 @@
 .badge {
   line-height: 1rem;
-  text-transform: uppercase; }
+  text-transform: capitalize; }
   .badge:first-child {
     margin-left: -2px; }
   .badge.grass {

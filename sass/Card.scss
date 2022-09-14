@@ -2,6 +2,10 @@
 
 .custom-card {
   margin: 15px 5px;
+  transition: transform 0.2s;
+  &:hover {
+    transform: scale(1.05);
+  }
   .custom-card-header {
     background-color: #f2f2f2;
     border-radius: 10px;
@@ -33,8 +37,8 @@
     }
     .pokemon-types .badge {
       width: 48%;
-      line-height: 0.75rem;
-      font-size: 0.75rem;
+      line-height: 0.65rem;
+      font-size: 0.65rem;
       &:not(:first-child) {
         margin-left: 2%;
       }
