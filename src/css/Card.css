@@ -2,7 +2,8 @@
   margin: 15px 5px;
   transition: transform 0.2s; }
   .custom-card:hover {
-    transform: scale(1.05); }
+    transform: scale(1.05);
+    cursor: pointer; }
   .custom-card .custom-card-header {
     background-color: #f2f2f2;
     border-radius: 10px;

@@ -11,7 +11,7 @@ export default function PokemonImage(props) {
         ></img>
       ) : (
         <img
-          src={"src/img/questionmark.png"}
+          src={"/src/img/questionmark.png"}
           alt={props.name + " image"}
           className="img-fluid questionmark"
         ></img>
