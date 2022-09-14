@@ -11,118 +11,59 @@
     padding-left: 1rem;
     padding-right: 1rem;
     padding-top: 0.2rem;
-    background-color: #fffff7;
+    background-color: $bg-white;
     .pokemon-number {
       color: grey;
       font-weight: 700;
       margin-bottom: 0.5em;
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       font-family: "Flexo Bold";
     }
     .pokemon-name {
       text-transform: capitalize;
       margin-bottom: 4px;
-      font-size: 1.5rem;
+      font-size: 1.2rem;
     }
     .pokemon-types .badge {
       width: 48%;
-      line-height: 1rem;
-      text-transform: uppercase;
+      line-height: 0.75rem;
+      font-size: 0.75rem;
       &:not(:first-child) {
         margin-left: 2%;
-      }
-      &:first-child{
-        margin-left: -2px;
-      }
-      &.grass {
-        background-color: $grass !important;
-      }
-      &.poison {
-        background-color: $poison !important;
-      }
-      &.fire {
-        background-color: $fire !important;
-      }
-      &.flying {
-        background: -webkit-linear-gradient(
-          180deg,
-          $flying-top 50%,
-          $flying-bottom 50%
-        );
-        background: -ms-linear-gradient(
-          180deg,
-          $flying-top 50%,
-          $flying-bottom 50%
-        );
-        background: -moz-linear-gradient(
-          180deg,
-          $flying-top 50%,
-          $flying-bottom 50%
-        );
-        background: -o-linear-gradient(
-          180deg,
-          $flying-top 50%,
-          $flying-bottom 50%
-        );
-        background: linear-gradient(
-          180deg,
-          $flying-top 50%,
-          $flying-bottom 50%
-        );
-        background-color: $flying-top;
-      }
-      &.water {
-        background-color: $water !important;
-      }
-      &.bug {
-        background-color: $bug !important;
-      }
-      &.normal {
-        background-color: $normal !important;
-      }
-      &.electric {
-        background-color: $electric !important;
-      }
-      &.ground {
-        background-color: $grass !important;
-      }
-      &.fairy {
-        background-color: $fairy !important;
-      }
-      &.dark {
-        background-color: $dark !important;
-      }
-      &.psychic {
-        background-color: $psychic !important;
-      }
-      &.dragon {
-        background-color: $grass !important;
-      }
-      &.steel {
-        background-color: $steel !important;
-      }
-      &.ghost {
-        background-color: $ghost !important;
-      }
-      &.rock {
-        background-color: $rock !important;
-      }
-      &.fighting {
-        background-color: $fighting !important;
-      }
-      &.ice {
-        background-color: $ice !important;
       }
     }
   }
 }
 
-@media (min-width: 768px) {
+
+@media(min-width: 576px){
   .custom-card {
     margin: 20px 15px;
     .custom-card-body {
       padding-left: 1.5rem;
       padding-right: 1.5rem;
+      .pokemon-number {
+        font-size: 1rem;
+      }
+      .pokemon-name{
+        font-size: 1.5rem;
+      }
+      .pokemon-types .badge {
+        font-size: 0.8rem;
+      }
+
     }
   }
 }
+
+@media(min-width: 768px){
+  .custom-card {
+    .custom-card-body {
+      .pokemon-types .badge {
+        font-size: 0.9rem;
+      }
+
+    }
+  }
+}
+

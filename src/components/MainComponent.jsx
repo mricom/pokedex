@@ -1,14 +1,14 @@
 import React from "react";
 import { Container } from "reactstrap";
-import ListView from "./PokedexView";
+import PokedexView from "./PokedexView";
 import "../css/Main.css";
 import Logo from "./LogoComponent";
 
 export default function Main() {
   return (
-    <Container className="my-5 main-container">
+    <Container className="my-5 main-container pb-4">
       <Logo></Logo>
-      <ListView></ListView>
+      <PokedexView></PokedexView>
     </Container>
   );
 }

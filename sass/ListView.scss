@@ -1,0 +1,76 @@
+@import "variables";
+
+.list-view {
+  .list-group-item {
+    background-color: inherit;
+    .pokemon-number {
+      font-family: "Flexo Bold";
+      font-size: 0.7rem;
+      color: grey;
+    }
+    .pokemon-name {
+      display: inline-block;
+      margin-right: 10px;
+      text-transform: capitalize;
+      font-size: 1.1rem;
+      margin-bottom: 0;
+    }
+    .pokemon-types {
+      display: inline-block;
+      .badge{
+        line-height: 0.6rem;
+        font-size: 0.6rem;
+      }
+      .badge:not(:first-child) {
+        margin-left: 7px;
+      }
+    }
+  }
+}
+
+@media(min-width: 576px){
+  .list-view {
+    padding-left: 5%;
+    padding-right: 5%;
+
+    .list-group-item {
+      .pokemon-number {
+        font-size: 0.9rem;
+      }
+      .pokemon-name {
+        margin-right: 5%;
+        font-size: 1.4rem;
+      }
+      .pokemon-types {
+        display: inline-block;
+        .badge{
+          font-size: 0.7rem;
+          line-height: 0.7rem;
+        }
+      }
+    }
+  }
+}
+
+@media(min-width: 768px){
+  .list-view {
+    padding-left: 10%;
+    padding-right: 10%;
+    .list-group-item {
+      .pokemon-number {
+        font-size: 1rem;
+      }
+      .pokemon-name {
+        margin-right: 5%;
+        font-size: 1.5rem;
+      }
+      .pokemon-types {
+        display: inline-block;
+        .badge{
+          line-height: 0.9rem;
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+}

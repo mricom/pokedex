@@ -1,3 +1,5 @@
+@import "variables";
+
 @font-face {
   font-family: "Flexo Demi";
   src: url("src/css/fonts/Flexo-Demi.ttf");
@@ -9,8 +11,8 @@
 }
 
 body {
-  background: linear-gradient(rgba(#ffcc01, 0.19), rgba(#ffcc01, 0.19)),
-    linear-gradient(rgba(#fffff2, 0.6), rgba(#fffff2, 0.6)),
+  background: linear-gradient(rgba($pokemon-yellow, 0.19), rgba($pokemon-yellow, 0.19)),
+    linear-gradient(rgba($bg-white, 0.6), rgba($bg-white, 0.6)),
     url("../img/background-sm.jpg");
   font-family: "Flexo Demi";
 }
