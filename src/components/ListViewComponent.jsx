@@ -8,7 +8,7 @@ export default function ListView(props) {
   return (
     <ListGroup flush className="list-view">
       {props.pokemons.map((pokemon) => (
-        <ListGroupItem>
+        <ListGroupItem key={pokemon.id}>
           <Row className="align-items-center">
             <Col xs="1" className="pokemon-image text-center">
               <PokemonImage image={pokemon.image} name={pokemon.name}/>
@@ -20,7 +20,7 @@ export default function ListView(props) {
               <h5 className="pokemon-name">{pokemon.name}</h5>
               <div className="pokemon-types">
                 {pokemon.types.map((type) => (
-                  <CustomBadge type={type} />
+                  <CustomBadge type={type} key={type}/>
                 ))}
               </div>
             </Col>

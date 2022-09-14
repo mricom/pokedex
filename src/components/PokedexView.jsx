@@ -20,7 +20,6 @@ export default function PokedexView() {
   const [pagesCount, setPagesCount] = useState(0);
 
   useEffect(() => {
-    console.log("hola");
     setPokemonList(pokemonListInitialState);
     api
       .getPokemonsList((page - 1) * limitPerPage)

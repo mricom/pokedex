@@ -14,7 +14,7 @@ export default function Card(props) {
         <h5 className="pokemon-name">{props.pokemon.name}</h5>
         <div className="pokemon-types">
           {props.pokemon.types.map((type) => (
-            <CustomBadge type={type} />
+            <CustomBadge type={type} key={type} />
           ))}
         </div>
       </div>
