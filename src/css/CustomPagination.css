@@ -1,6 +1,13 @@
 .custom-pagination .MuiPaginationItem-outlined {
   border: 1px solid rgba(255, 204, 1, 0.8); }
 
+.custom-pagination .MuiPaginationItem-page {
+  height: 26px;
+  margin: 0 1px;
+  padding: 0 4px;
+  min-width: 26px;
+  border-radius: 13px; }
+
 .custom-pagination .MuiPaginationItem-page:hover {
   background-color: rgba(255, 204, 1, 0.1); }
 
@@ -11,3 +18,19 @@
 
 .custom-pagination .MuiPaginationItem-root {
   color: #5c5c5c; }
+
+@media (min-width: 576px) {
+  .custom-pagination .MuiPaginationItem-page {
+    height: 32px;
+    margin: 0 3px;
+    padding: 0 6px;
+    min-width: 32px;
+    border-radius: 16px; } }
+
+@media (min-width: 768px) {
+  .custom-pagination .MuiPaginationItem-page {
+    height: 40px;
+    padding: 0 10px;
+    font-size: 0.9375rem;
+    min-width: 40px;
+    border-radius: 20px; } }

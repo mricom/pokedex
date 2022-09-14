@@ -5,6 +5,14 @@
     border: 1px solid rgba($pokemon-yellow, 0.8);
   }
 
+  .MuiPaginationItem-page {
+    height: 26px;
+    margin: 0 1px;
+    padding: 0 4px;
+    min-width: 26px;
+    border-radius: 13px;
+  }
+
   .MuiPaginationItem-page:hover {
     background-color: rgba(rgba($pokemon-yellow, 0.8), 0.1);
   }
@@ -17,5 +25,25 @@
   }
   .MuiPaginationItem-root {
     color: $letter-grey;
+  }
+}
+
+@media(min-width: 576px){
+  .custom-pagination .MuiPaginationItem-page {
+    height: 32px;
+    margin: 0 3px;
+    padding: 0 6px;
+    min-width: 32px;
+    border-radius: 16px;
+  }
+}
+
+@media(min-width: 768px){
+  .custom-pagination .MuiPaginationItem-page {
+    height: 40px;
+    padding: 0 10px;
+    font-size: 0.9375rem;
+    min-width: 40px;
+    border-radius: 20px;
   }
 }

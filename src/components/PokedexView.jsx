@@ -69,7 +69,7 @@ export default function PokedexView() {
             page={page}
             setPage={setPage}
             pagesCount={pagesCount}
-            className="mt-5"
+            className="mt-3 mt-md-5"
           />
           {view === "grid" ? (
             <GridView pokemons={pokemonList.data} />
