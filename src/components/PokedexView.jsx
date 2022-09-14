@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from "react";
+import { Row, Col } from "reactstrap";
 import * as api from "../api/PokemonAPI";
 import GridView from "./GridViewComponent";
 import ListView from "./ListViewComponent";
+import LoadingSpinner from "./LoadingSpinnerComponent";
 
 export default function PokedexView() {
   const [pokemonList, setPokemonList] = useState({
     dataLoaded: false,
     data: [],
   });
-  const [view, setView] = useState("grid");
+  const [view, setView] = useState("list");
 
   useEffect(() => {
     api
@@ -54,16 +56,18 @@ export default function PokedexView() {
     <div>
       {pokemonList.dataLoaded ? (
         <>
-          {view === "grid" ? 
-            <GridView pokemons={pokemonList.data}/>
-            : 
-            <>
-            <ListView pokemons={pokemonList.data}/>
-            </>
-          }
+          {view === "grid" ? (
+            <GridView pokemons={pokemonList.data} />
+          ) : (
+            <ListView pokemons={pokemonList.data} />
+          )}
         </>
       ) : (
-        <p>Loading...</p>
+        <Row className="align-items-center py-4">
+          <Col className="text-center">
+            <LoadingSpinner />
+          </Col>
+        </Row>
       )}
     </div>
   );
