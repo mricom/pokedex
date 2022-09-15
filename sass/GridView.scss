@@ -1,13 +1,17 @@
-.grid-view{
+.grid-view {
   padding: 10px;
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 }
 
-.row>* {
+.row > * {
   padding: 0;
 }
 
-@media(min-width: 768px){
-  .grid-view{
+@media (min-width: 768px) {
+  .grid-view {
     padding: 20px;
   }
 }

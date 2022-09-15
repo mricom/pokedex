@@ -3,8 +3,8 @@
   padding-bottom: 10px; }
   .list-view .list-group-item {
     background-color: inherit;
-    transition: background-color .2s;
-    transition: transform .2s; }
+    transition: background-color 0.2s;
+    transition: transform 0.2s; }
     .list-view .list-group-item:first-child {
       border-top-left-radius: 10px;
       border-top-right-radius: 10px; }
@@ -34,6 +34,9 @@
         font-size: 0.6rem; }
       .list-view .list-group-item .pokemon-types .badge:not(:first-child) {
         margin-left: 7px; }
+    .list-view .list-group-item a {
+      color: inherit;
+      text-decoration: none; }
 
 @media (min-width: 576px) {
   .list-view {

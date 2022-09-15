@@ -7,20 +7,16 @@ import LoadingSpinner from "./LoadingSpinnerComponent";
 import PokedexViewSelector from "./PokedexViewSelectorComponent";
 import { limitPerPage } from "../shared/utils";
 import CustomPagination from "./CustomPaginationComponent";
-
-const pokemonListInitialState = {
-  dataLoaded: false,
-  data: [],
-};
+import Pokemon, {pokemonDataInitialState} from "../shared/pokemon";
 
 export default function PokedexView() {
-  const [pokemonList, setPokemonList] = useState(pokemonListInitialState);
+  const [pokemonList, setPokemonList] = useState(pokemonDataInitialState);
   const [view, setView] = useState("grid");
   const [page, setPage] = useState(1);
   const [pagesCount, setPagesCount] = useState(0);
 
   useEffect(() => {
-    setPokemonList(pokemonListInitialState);
+    setPokemonList(pokemonDataInitialState);
     api
       .getPokemonsList((page - 1) * limitPerPage)
       .then((data) => {
@@ -28,13 +24,7 @@ export default function PokedexView() {
         api
           .getPokemonDetailedList(data)
           .then((pokemons) => {
-            return pokemons.map((pokemon) => ({
-              name: pokemon.name,
-              id: pokemon.id,
-              detailUrl: pokemon.species.url,
-              types: pokemon.types.map((item) => item.type.name),
-              image: pokemon.sprites.other["official-artwork"].front_default,
-            }));
+            return pokemons.map((pokemon) => new Pokemon(pokemon));
           })
           .then((list) => {
             setPokemonList((prevState) => ({
