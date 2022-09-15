@@ -16,10 +16,7 @@ export default function ListView(props) {
                 <PokemonImage image={pokemon.image} name={pokemon.name} />
               </Col>
               <Col xs="2" className="text-center">
-                <div className="pokemon-number">
-                  Nº
-                  {pokemon.id}
-                </div>
+                <div className="pokemon-number">Nº {pokemon.id}</div>
               </Col>
               <Col xs="9">
                 <h5 className="pokemon-name">{pokemon.name}</h5>
