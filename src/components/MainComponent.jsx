@@ -24,7 +24,7 @@ export default function Main() {
             element={<PokemonDetailView />}
           />
           <Route exact path="/pokemons/" element={<PokedexView />} />
-          <Route path="*" element={<Navigate to="/pokemons/" replace />} />
+          <Route path="*" element={<Navigate to={`/pokemons/`} replace />} />
         </Routes>
       </Router>
     </Container>

@@ -3,9 +3,6 @@ import Pagination from "@material-ui/lab/Pagination";
 import "../css/CustomPagination.css";
 
 export default function CustomPagination(props) {
-  const handlePageChange = (event, value) => {
-    props.setPage(Math.max(1, value));
-  };
   return (
     <div
       className={
@@ -18,7 +15,7 @@ export default function CustomPagination(props) {
         siblingCount={1}
         boundaryCount={1}
         variant="outlined"
-        onChange={handlePageChange}
+        onChange={props.handlePageChange}
       />
     </div>
   );

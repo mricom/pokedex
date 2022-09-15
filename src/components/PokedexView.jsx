@@ -7,15 +7,37 @@ import LoadingSpinner from "./LoadingSpinnerComponent";
 import PokedexViewSelector from "./PokedexViewSelectorComponent";
 import { limitPerPage } from "../shared/utils";
 import CustomPagination from "./CustomPaginationComponent";
-import Pokemon, {pokemonDataInitialState} from "../shared/pokemon";
+import Pokemon, { pokemonDataInitialState } from "../shared/pokemon";
+import { useNavigate } from "react-router-dom";
+import { useQuery } from "../shared/useQuery";
 
 export default function PokedexView() {
+  let query = useQuery();
+  const queryPage = isNaN(query.get("page"))
+    ? 1
+    : JSON.parse(query.get("page"));
+  const queryView = query.get("view");
+  const page = queryPage || JSON.parse(sessionStorage.getItem("page")) || 1;
+  const view = queryView || sessionStorage.getItem("view") || "grid";
   const [pokemonList, setPokemonList] = useState(pokemonDataInitialState);
-  const [view, setView] = useState("grid");
-  const [page, setPage] = useState(1);
   const [pagesCount, setPagesCount] = useState(0);
+  const navigate = useNavigate();
 
   useEffect(() => {
+    if (!queryPage || !queryView) {
+      navigate(`/pokemons/?page=${page}&view=${view}`, { replace: true });
+    }
+    if (page > pagesCount) {
+      navigate(`/pokemons/?page=1&view=${view}`, { replace: true });
+    }
+    if (!["grid", "list"].includes(view)) {
+      navigate(
+        `/pokemons/?page=${page}&view=${
+          sessionStorage.getItem("view") || "grid"
+        }`,
+        { replace: true }
+      );
+    }
     setPokemonList(pokemonDataInitialState);
     api
       .getPokemonsList((page - 1) * limitPerPage)
@@ -50,6 +72,16 @@ export default function PokedexView() {
       });
   }, [page]);
 
+  const handlePageChange = (e, value) => {
+    navigate(`/pokemons/?page=${value}&view=${view}`);
+    sessionStorage.setItem("page", value);
+  };
+
+  const setView = (value) => {
+    navigate(`/pokemons/?page=${page}&view=${value}`);
+    sessionStorage.setItem("view", value);
+  };
+
   return (
     <div>
       <PokedexViewSelector view={view} setView={setView} />
@@ -57,7 +89,7 @@ export default function PokedexView() {
         <>
           <CustomPagination
             page={page}
-            setPage={setPage}
+            handlePageChange={handlePageChange}
             pagesCount={pagesCount}
             className="mt-3 mt-md-5"
           />
@@ -68,7 +100,7 @@ export default function PokedexView() {
           )}
           <CustomPagination
             page={page}
-            setPage={setPage}
+            handlePageChange={handlePageChange}
             pagesCount={pagesCount}
             className="mt-2 mb-4"
           />
