@@ -1,5 +1,8 @@
 .grid-view {
   padding: 10px; }
+  .grid-view a {
+    color: inherit;
+    text-decoration: none; }
 
 .row > * {
   padding: 0; }

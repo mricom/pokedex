@@ -1,5 +1,9 @@
 .custom-card {
-  margin: 15px 5px; }
+  margin: 15px 5px;
+  transition: transform 0.2s; }
+  .custom-card:hover {
+    transform: scale(1.05);
+    cursor: pointer; }
   .custom-card .custom-card-header {
     background-color: #f2f2f2;
     border-radius: 10px;
@@ -7,8 +11,6 @@
     display: flex;
     justify-content: center;
     align-items: center; }
-    .custom-card .custom-card-header .questionmark {
-      max-height: 258px; }
   .custom-card .custom-card-body {
     padding-left: 1rem;
     padding-right: 1rem;
@@ -26,10 +28,10 @@
       font-size: 1.2rem; }
     .custom-card .custom-card-body .pokemon-types .badge {
       width: 48%;
-      line-height: 0.75rem;
-      font-size: 0.75rem; }
-      .custom-card .custom-card-body .pokemon-types .badge:not(:first-child) {
-        margin-left: 2%; }
+      line-height: 0.65rem;
+      font-size: 0.65rem; }
+      .custom-card .custom-card-body .pokemon-types .badge:first-child {
+        margin-right: 2%; }
 
 @media (min-width: 576px) {
   .custom-card {

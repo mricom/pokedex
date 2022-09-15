@@ -11,14 +11,24 @@ export const getPokemonsList = (offset) => {
   );
 };
 
-export const getPokemonDetail = (url) => {
-  return fetch(url);
+export const getPokemonDetail = ({ url = null, id = null }) => {
+  const finalUrl = url ? url : `${HOST}pokemon/${id}`;
+  return fetch(finalUrl);
+};
+
+export const getPokemonDetailErrorControl = ({ url, id }) => {
+  return getPokemonDetail({ url, id }).then((response) => {
+    if (response.status !== 200) {
+      throw new Error("Invalid Status from server: " + response.statusText);
+    }
+    return response.json();
+  });
 };
 
 export const getPokemonDetailedList = (data) => {
   return Promise.all(
     data.results.map((pokemon) => {
-      return getPokemonDetail(pokemon.url);
+      return getPokemonDetail({ url: pokemon.url });
     })
   )
     .then((responses) => {

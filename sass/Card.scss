@@ -2,16 +2,18 @@
 
 .custom-card {
   margin: 15px 5px;
+  transition: transform 0.2s;
+  &:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
   .custom-card-header {
-    background-color: #f2f2f2;
+    background-color: $image-bg-color;
     border-radius: 10px;
     padding: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    .questionmark {
-      max-height: 258px;
-    }
   }
   .custom-card-body {
     padding-left: 1rem;
@@ -33,10 +35,10 @@
     }
     .pokemon-types .badge {
       width: 48%;
-      line-height: 0.75rem;
-      font-size: 0.75rem;
-      &:not(:first-child) {
-        margin-left: 2%;
+      line-height: 0.65rem;
+      font-size: 0.65rem;
+      &:first-child {
+        margin-right: 2%;
       }
     }
   }

@@ -1,0 +1,62 @@
+.pokemon-detail-view {
+  padding: 1.5rem; }
+  .pokemon-detail-view .pokemon-name {
+    text-transform: capitalize;
+    margin-bottom: 1rem; }
+  .pokemon-detail-view .pokemon-image-col .pokemon-image-div {
+    padding: 0 1rem;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+  .pokemon-detail-view .pokemon-data {
+    padding: 1rem 0; }
+    .pokemon-detail-view .pokemon-data .pokemon-features {
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+      background-color: rgba(255, 204, 1, 0.1);
+      border-radius: 10px;
+      display: flex;
+      justify-content: space-around; }
+      .pokemon-detail-view .pokemon-data .pokemon-features div:first-child {
+        margin-right: 1rem; }
+      .pokemon-detail-view .pokemon-data .pokemon-features div span {
+        font-family: "Flexo Regular"; }
+    .pokemon-detail-view .pokemon-data .pokemon-types .badge {
+      min-width: Min(150px, 40%);
+      font-size: 0.95rem;
+      line-height: 0.95rem;
+      font-family: "Flexo Regular"; }
+      .pokemon-detail-view .pokemon-data .pokemon-types .badge:first-of-type {
+        margin-right: 10px; }
+
+@media (min-width: 576px) {
+  .pokemon-detail-view {
+    padding: 2rem; }
+    .pokemon-detail-view .pokemon-image-div {
+      padding: 0.5rem 2rem; }
+    .pokemon-detail-view .pokemon-data .pokemon-features {
+      font-size: 1.1rem; }
+    .pokemon-detail-view .pokemon-data .pokemon-types .badge {
+      font-size: 1rem;
+      line-height: 1rem; } }
+
+@media (min-width: 768px) {
+  .pokemon-detail-view .pokemon-image-div {
+    padding: 1rem 1rem; }
+  .pokemon-detail-view .pokemon-data {
+    padding: 0 1rem; }
+    .pokemon-detail-view .pokemon-data .pokemon-features {
+      font-size: 1.1rem; } }
+
+@media (min-width: 991px) {
+  .pokemon-detail-view {
+    padding: 2.5rem; } }
+
+@media (min-width: 1200px) {
+  .pokemon-detail-view {
+    padding: 3rem; }
+    .pokemon-detail-view .pokemon-image-div {
+      padding: 1rem 3rem; } }

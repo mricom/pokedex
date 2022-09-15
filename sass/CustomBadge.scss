@@ -2,7 +2,7 @@
 
 .badge {
   line-height: 1rem;
-  text-transform: uppercase;
+  text-transform: capitalize;
   &:first-child {
     margin-left: -2px;
   }
