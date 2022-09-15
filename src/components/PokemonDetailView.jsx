@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { Col, Row } from "reactstrap";
 import { getPokemonDetailErrorControl } from "../api/PokemonAPI";
 import Pokemon, { pokemonDataInitialState } from "../shared/pokemon";
+import BackButton from "./BackButtonComponent";
 
 export default function PokemonDetailView() {
   let { id } = useParams();
@@ -23,12 +25,19 @@ export default function PokemonDetailView() {
           dataLoaded: true,
         }));
       });
-  });
+  }, []);
 
   return (
     <div className="pokemon-detail-view">
+      <Row>
+        <Col key="back-button">
+          <BackButton />
+        </Col>
+      </Row>
       <p>{pokemon.data.name}</p>
-      <div><img src={pokemon.data.image} alt={pokemon.data.name + " image"}/></div>
+      <div>
+        <img src={pokemon.data.image} alt={pokemon.data.name + " image"} />
+      </div>
     </div>
   );
 }
