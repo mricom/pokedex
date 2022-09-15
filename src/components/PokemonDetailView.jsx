@@ -31,7 +31,7 @@ export default function PokemonDetailView() {
     <div className="pokemon-detail-view">
       <Row>
         <Col key="back-button">
-          <BackButton />
+          <BackButton backTo="/pokemons/"/>
         </Col>
       </Row>
       <p>{pokemon.data.name}</p>
