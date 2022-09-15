@@ -30,8 +30,8 @@
       width: 48%;
       line-height: 0.65rem;
       font-size: 0.65rem; }
-      .custom-card .custom-card-body .pokemon-types .badge:not(:first-child) {
-        margin-left: 2%; }
+      .custom-card .custom-card-body .pokemon-types .badge:first-child {
+        margin-right: 2%; }
 
 @media (min-width: 576px) {
   .custom-card {

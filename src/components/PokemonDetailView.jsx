@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { Col, Row } from "reactstrap";
 import { getPokemonDetailErrorControl } from "../api/PokemonAPI";
-import Pokemon, { pokemonDataInitialState } from "../shared/pokemon";
-import BackButton from "./BackButtonComponent";
+import { PokemonExtended, pokemonDataInitialState } from "../shared/pokemon";
+import { Row, Col } from "reactstrap";
+import LoadingSpinner from "./LoadingSpinnerComponent";
+import PokemonDetail from "./PokemonDetailComponent";
 
 export default function PokemonDetailView() {
   let { id } = useParams();
@@ -15,7 +16,7 @@ export default function PokemonDetailView() {
         setPokemon((prevState) => ({
           ...prevState,
           dataLoaded: true,
-          data: new Pokemon(pokemon),
+          data: new PokemonExtended(pokemon),
         }));
       })
       .catch((e) => {
@@ -28,16 +29,16 @@ export default function PokemonDetailView() {
   }, []);
 
   return (
-    <div className="pokemon-detail-view">
-      <Row>
-        <Col key="back-button">
-          <BackButton backTo="/pokemons/"/>
-        </Col>
-      </Row>
-      <p>{pokemon.data.name}</p>
-      <div>
-        <img src={pokemon.data.image} alt={pokemon.data.name + " image"} />
-      </div>
-    </div>
+    <>
+      {pokemon.dataLoaded ? (
+        <PokemonDetail pokemon={pokemon.data} />
+      ) : (
+        <Row className="align-items-center py-4">
+          <Col className="text-center">
+            <LoadingSpinner />
+          </Col>
+        </Row>
+      )}
+    </>
   );
 }

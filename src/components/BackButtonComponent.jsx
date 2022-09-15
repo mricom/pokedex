@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { Button } from "reactstrap";
+import "../css/BackButton.css";
 
 export default function BackButton(props) {
   const navigate = useNavigate();
@@ -9,8 +9,8 @@ export default function BackButton(props) {
   };
 
   return (
-    <Button className="back-button" onClick={changeRoute}>
-      <i className="fa-solid fa-circle-arrow-left"></i>
-    </Button>
+    <div className="back-button">
+      <i className="fa-solid fa-circle-arrow-left" onClick={changeRoute}></i>
+    </div>
   );
 }

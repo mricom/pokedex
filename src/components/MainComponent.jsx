@@ -14,7 +14,6 @@ import "../css/Main.css";
 export default function Main() {
   return (
     <Container className="my-5 main-container pb-4">
-      <Logo></Logo>
       <Router>
         <Routes>
           <Route
@@ -23,7 +22,16 @@ export default function Main() {
             path="/pokemons/:id/"
             element={<PokemonDetailView />}
           />
-          <Route exact path="/pokemons/" element={<PokedexView />} />
+          <Route
+            exact
+            path="/pokemons/"
+            element={
+              <>
+                <Logo></Logo>
+                <PokedexView />
+              </>
+            }
+          />
           <Route path="*" element={<Navigate to={`/pokemons/`} replace />} />
         </Routes>
       </Router>

@@ -1,0 +1,28 @@
+@import "variables";
+
+.back-button i {
+  color: rgba($pokemon-yellow, 0.8);
+  font-size: 2.1rem;
+  &:hover {
+    color: $pokemon-yellow;
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 576px) {
+  .back-button i {
+    font-size: 2.3rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .back-button i {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .back-button i {
+    font-size: 3rem;
+  }
+}

@@ -7,7 +7,7 @@ import LoadingSpinner from "./LoadingSpinnerComponent";
 import PokedexViewSelector from "./PokedexViewSelectorComponent";
 import { limitPerPage } from "../shared/utils";
 import CustomPagination from "./CustomPaginationComponent";
-import Pokemon, { pokemonDataInitialState } from "../shared/pokemon";
+import { Pokemon, pokemonDataInitialState } from "../shared/pokemon";
 import { useNavigate } from "react-router-dom";
 import { useQuery } from "../shared/useQuery";
 
@@ -26,9 +26,6 @@ export default function PokedexView() {
   useEffect(() => {
     if (!queryPage || !queryView) {
       navigate(`/pokemons/?page=${page}&view=${view}`, { replace: true });
-    }
-    if (page > pagesCount) {
-      navigate(`/pokemons/?page=1&view=${view}`, { replace: true });
     }
     if (!["grid", "list"].includes(view)) {
       navigate(

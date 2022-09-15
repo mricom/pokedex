@@ -10,8 +10,16 @@
   src: url("/src/css/fonts/Flexo-Bold.ttf");
 }
 
+@font-face {
+  font-family: "Flexo Regular";
+  src: url("/src/css/fonts/Flexo-Regular.ttf");
+}
+
 body {
-  background: linear-gradient(rgba($pokemon-yellow, 0.19), rgba($pokemon-yellow, 0.19)),
+  background: linear-gradient(
+      rgba($pokemon-yellow, 0.19),
+      rgba($pokemon-yellow, 0.19)
+    ),
     linear-gradient(rgba($bg-white, 0.6), rgba($bg-white, 0.6)),
     url("../img/background-sm.jpg");
   font-family: "Flexo Demi";

@@ -8,7 +8,7 @@
     cursor: pointer;
   }
   .custom-card-header {
-    background-color: #f2f2f2;
+    background-color: $image-bg-color;
     border-radius: 10px;
     padding: 1rem;
     display: flex;
@@ -37,8 +37,8 @@
       width: 48%;
       line-height: 0.65rem;
       font-size: 0.65rem;
-      &:not(:first-child) {
-        margin-left: 2%;
+      &:first-child {
+        margin-right: 2%;
       }
     }
   }
