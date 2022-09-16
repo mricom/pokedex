@@ -1,4 +1,5 @@
 import React from "react";
+import questionmark from "/src/img/questionmark.png";
 
 export default function PokemonImage(props) {
   return (
@@ -11,7 +12,7 @@ export default function PokemonImage(props) {
         ></img>
       ) : (
         <img
-          src={"/src/img/questionmark.png"}
+          src={questionmark}
           alt={props.name + " image"}
           className="img-fluid questionmark"
         ></img>
