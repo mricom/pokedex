@@ -13,7 +13,7 @@ import "../css/Main.css";
 
 export default function Main() {
   return (
-    <Container className="my-5 main-container pb-4">
+    <Container className="my-5 main-container py-4">
       <Router>
         <Routes>
           <Route

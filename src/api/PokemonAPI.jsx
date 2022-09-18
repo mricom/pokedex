@@ -4,7 +4,7 @@ export const getPokemonsList = (offset) => {
   return fetch(`${HOST}pokemon/?limit=${limitPerPage}&offset=${offset}`).then(
     (response) => {
       if (response.status !== 200) {
-        throw new Error("Invalid Status from server: " + response.statusText);
+        throw new Error("Invalid Status from server. " + response.statusText);
       }
       return response.json();
     }
@@ -18,9 +18,12 @@ export const getPokemonDetail = ({ url = null, id = null }) => {
 
 export const getPokemonDetailErrorControl = ({ url, id }) => {
   return getPokemonDetail({ url, id }).then((response) => {
-    if (response.status !== 200) {
-      throw new Error("Invalid Status from server: " + response.statusText);
-    }
+    console.log(response);
+    if (response.status === 404) {
+      throw new Error("Invalid Status from server: Not found.");
+    } else if(response.status !== 200){
+      throw new Error("Invalid Status from server. " + response.statusText);
+    } 
     return response.json();
   });
 };
@@ -37,7 +40,7 @@ export const getPokemonDetailedList = (data) => {
           throw new Error(
             "Invalid Status from server catching " +
               pokemon.name +
-              " details: " +
+              " details. " +
               response.statusText
           );
         }

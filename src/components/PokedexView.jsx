@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Row, Col } from "reactstrap";
+import { Row, Col, Alert } from "reactstrap";
 import * as api from "../api/PokemonAPI";
 import GridView from "./GridViewComponent";
 import ListView from "./ListViewComponent";
@@ -40,31 +40,41 @@ export default function PokedexView() {
       .getPokemonsList((page - 1) * limitPerPage)
       .then((data) => {
         setPagesCount(Math.ceil(data.count / limitPerPage));
-        api
-          .getPokemonDetailedList(data)
-          .then((pokemons) => {
-            return pokemons.map((pokemon) => new Pokemon(pokemon));
-          })
-          .then((list) => {
-            setPokemonList((prevState) => ({
-              ...prevState,
-              dataLoaded: true,
-              data: list,
-            }));
-          })
-          .catch((e) => {
-            alert(e);
-            setPokemonList((prevState) => ({
-              ...prevState,
-              dataLoaded: true,
-            }));
-          });
+        if (data.results.length > 0) {
+          api
+            .getPokemonDetailedList(data)
+            .then((pokemons) => {
+              return pokemons.map((pokemon) => new Pokemon(pokemon));
+            })
+            .then((list) => {
+              setPokemonList((prevState) => ({
+                ...prevState,
+                dataLoaded: {
+                  isLoaded: true,
+                  isValid: true,
+                  error: "",
+                },
+                data: list,
+              }));
+            })
+            .catch((e) => {
+              setPokemonList((prevState) => ({
+                ...prevState,
+                dataLoaded: {
+                  isLoaded: true,
+                  isValid: false,
+                  error: e.toString(),
+                },
+              }));
+            });
+        } else {
+          throw new Error("The page you are requesting does not exist.");
+        }
       })
       .catch((e) => {
-        alert(e);
         setPokemonList((prevState) => ({
           ...prevState,
-          dataLoaded: true,
+          dataLoaded: { isLoaded: true, isValid: false, error: e.toString() },
         }));
       });
   }, [page]);
@@ -82,25 +92,35 @@ export default function PokedexView() {
   return (
     <div>
       <PokedexViewSelector view={view} setView={setView} />
-      {pokemonList.dataLoaded ? (
+      {pokemonList.dataLoaded.isLoaded ? (
         <>
-          <CustomPagination
-            page={page}
-            handlePageChange={handlePageChange}
-            pagesCount={pagesCount}
-            className="mt-3 mt-md-5"
-          />
-          {view === "grid" ? (
-            <GridView pokemons={pokemonList.data} />
+          {pokemonList.dataLoaded.isValid ? (
+            <>
+              <CustomPagination
+                page={page}
+                handlePageChange={handlePageChange}
+                pagesCount={pagesCount}
+                className="mt-3 mt-md-5"
+              />
+              {view === "grid" ? (
+                <GridView pokemons={pokemonList.data} />
+              ) : (
+                <ListView pokemons={pokemonList.data} />
+              )}
+              <CustomPagination
+                page={page}
+                handlePageChange={handlePageChange}
+                pagesCount={pagesCount}
+                className="mt-2 mb-4"
+              />
+            </>
           ) : (
-            <ListView pokemons={pokemonList.data} />
+            <>
+              <Alert color="danger" className="text-center">
+                {pokemonList.dataLoaded.error}
+              </Alert>
+            </>
           )}
-          <CustomPagination
-            page={page}
-            handlePageChange={handlePageChange}
-            pagesCount={pagesCount}
-            className="mt-2 mb-4"
-          />
         </>
       ) : (
         <Row className="align-items-center py-4">

@@ -17,6 +17,10 @@ export class PokemonExtended extends Pokemon {
 }
 
 export const pokemonDataInitialState = {
-  dataLoaded: false,
+  dataLoaded: {
+    isLoaded: false,
+    isValid: false,
+    error: ""
+  },
   data: [],
 };
