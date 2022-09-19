@@ -25,7 +25,7 @@ npm run dev
 
 Now the page is being served by default on: [http://localhost:3000/](http://localhost:3000/).
 
-## Production
+### Production
 
 To deploy the project, you have to buid it:
 
